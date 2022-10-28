@@ -130,7 +130,7 @@ def save_img(item_id, item_name, img_url):
         print(f'skip Furniture Pack [{item_name}], img_url: {img_url}')
         return False
     if not os.path.exists(collect_path + item_id):
-        os.mkdir(collect_path + item_id)
+        os.makedirs(collect_path + item_id)
     filepath = collect_path + item_id + '/%s.png' % item_name
     if os.path.exists(filepath):
         return False

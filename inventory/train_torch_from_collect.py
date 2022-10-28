@@ -360,7 +360,7 @@ def screenshot():
 
 def save_collect_img(item_id, img):
     if not os.path.exists(collect_path + item_id):
-        os.mkdir(collect_path + item_id)
+        os.makedirs(collect_path + item_id)
     cv2.imwrite(collect_path + item_id + '/%s.png' % int(time.time() * 1000), img)
 
 
