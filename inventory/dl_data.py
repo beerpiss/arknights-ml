@@ -117,7 +117,7 @@ def save_item(item_name, img_url):
         if item['itemType'] in {'MATERIAL', 'ARKPLANNER', 'ACTIVITY_ITEM', 'VOUCHER_MGACHA', 'AP_SUPPLY'} or item['itemId'].isdigit():
             item_id = item['itemId']
         if item['itemType'] not in {'ACTIVITY_ITEM', 'VOUCHER_MGACHA', 'AP_SUPPLY'} \
-                and not item_id.isdigit() and item_name not in {'模组数据块', '数据增补仪', '数据增补条'}:
+                and not item_id.isdigit() and item_name not in {'Module Data Block', 'Data Patching Device', 'Data Patching Strip'}:
             item_id = 'other'
     return save_img(item_id, item_name, img_url)
 
@@ -126,8 +126,8 @@ def save_img(item_id, item_name, img_url):
     if img_url == '':
         print(f'skip {item_name}, img_url: {img_url}')
         return False
-    if '家具收藏包' in item_name:
-        print(f'skip 家具收藏包 [{item_name}], img_url: {img_url}')
+    if 'Furniture Pack' in item_name:
+        print(f'skip Furniture Pack [{item_name}], img_url: {img_url}')
         return False
     if not os.path.exists(collect_path + item_id):
         os.mkdir(collect_path + item_id)
