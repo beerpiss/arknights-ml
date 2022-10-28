@@ -59,6 +59,8 @@ items = get_items()
 def get_items_id_map():
     res = {}
     for item in items:
+        if '_rep_' in item:
+            continue
         res[item['itemId']] = item
     return res
 

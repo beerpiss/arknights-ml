@@ -8,7 +8,7 @@ import cv2
 import numpy as np
 import torch
 import torch.nn as nn
-from PIL import Image
+from pil import Image
 
 import inventory
 from focal_loss import FocalLoss
