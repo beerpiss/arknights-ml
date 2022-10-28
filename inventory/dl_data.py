@@ -59,8 +59,6 @@ items = get_items()
 def get_items_id_map():
     res = {}
     for item in items:
-        if '_rep_' in item:
-            continue
         res[item['itemId']] = item
     return res
 
@@ -128,6 +126,8 @@ def save_item(item_name, img_url):
 
 
 def save_img(item_id, item_name, img_url):
+    if '_rep_' in item_id:
+        item_id = item_id.split('_rep_')[0]
     if img_url == '':
         print(f'skip {item_name}, img_url: {img_url}')
         return False
