@@ -66,7 +66,7 @@ def get_item_name(item_id, items_id_map):
     if item_id.startswith('@'):
         item_name = get_manual_item_name(item_id)
     elif item_id != 'other':
-        item_name = items_id_map[item_id]['name']
+        item_name = items_id_map[item_id]['name'] if item_id in items_id_map else ""
     return item_name
 
 
