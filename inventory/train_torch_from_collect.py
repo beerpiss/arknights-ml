@@ -91,7 +91,7 @@ def get_item_type(item_id, items_id_map):
         if item_id.startswith('@charm'):
             item_type = 'special_report_item'
     elif item_id != 'other':
-        item_type = items_id_map[item_id]['itemType']
+        item_type = items_id_map[item_id]['itemType'] if item_id in items_id_map else ''
     return item_type
 
 
