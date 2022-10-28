@@ -66,7 +66,7 @@ def get_item_name(item_id, items_id_map):
     if item_id.startswith('@'):
         item_name = get_manual_item_name(item_id)
     elif item_id != 'other':
-        item_name = items_id_map[item_id]['name'] if item_id in items_id_map else ""
+        item_name = items_id_map[item_id]['name'] if item_id in items_id_map else "UNKNOWN"
     return item_name
 
 
@@ -91,7 +91,7 @@ def get_item_type(item_id, items_id_map):
         if item_id.startswith('@charm'):
             item_type = 'special_report_item'
     elif item_id != 'other':
-        item_type = items_id_map[item_id]['itemType'] if item_id in items_id_map else ''
+        item_type = items_id_map[item_id]['itemType'] if item_id in items_id_map else 'UNKNOWN'
     return item_type
 
 
