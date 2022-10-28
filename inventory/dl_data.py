@@ -36,7 +36,8 @@ def update_items():
     if remove_flag:
         print('remove old collect')
         import clear_collect
-        clear_collect.clear_collect_folder(collect_path)
+        if os.path.exists(collect_path): 
+            clear_collect.clear_collect_folder(collect_path)
 
     with open('items.json', 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False)
