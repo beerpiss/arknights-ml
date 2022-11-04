@@ -67,7 +67,7 @@ def get_items_id_map():
 def get_items_name_map():
     res = {}
     for item in items:
-        if "_rep_" in item:
+        if "_rep_" in item['itemId']:
             continue
         res[item['name']] = item
     return res
@@ -117,9 +117,9 @@ def save_item(item_name, img_url):
     item = items_name_map.get(item_name)
     item_id = 'other'
     if item:
-        if item['itemType'] in {'MATERIAL', 'ARKPLANNER', 'ACTIVITY_ITEM', 'VOUCHER_MGACHA', 'AP_SUPPLY'} or item['itemId'].isdigit():
+        if item['itemType'] in {'MATERIAL', 'ARKPLANNER', 'ACTIVITY_ITEM', 'VOUCHER_MGACHA', 'AP_SUPPLY', 'ET_STAGE'} or item['itemId'].isdigit():
             item_id = item['itemId']
-        if item['itemType'] not in {'ACTIVITY_ITEM', 'VOUCHER_MGACHA', 'AP_SUPPLY'} \
+        if item['itemType'] not in {'ACTIVITY_ITEM', 'VOUCHER_MGACHA', 'AP_SUPPLY', 'ET_STAGE'} \
                 and not item_id.isdigit() and item_name not in {'Module Data Block', 'Data Patching Device', 'Data Patching Strip'}:
             item_id = 'other'
     return save_img(item_id, item_name, img_url)
