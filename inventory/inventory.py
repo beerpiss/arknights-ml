@@ -5,7 +5,7 @@ from io import BytesIO
 
 import cv2
 import numpy as np
-from pil import Image
+from PIL import Image
 
 
 def load_item_map():
